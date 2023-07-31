@@ -1,9 +1,13 @@
 :root {
-  --light-red: hsl(0, 100%, 67%);
-  --orangey-yellow: hsl(39, 100%, 56%);
-  --green-teal: hsl(166, 100%, 37%);
-  --cobalt-blue: hsl(234, 85%, 45%);
+  --light-red: rgba(255, 87, 87, 0.1);
+  --orangey-yellow: hsla(39, 100%, 56%, 0.1);
+  --green-teal: hsla(166, 100%, 37%, 0.1);
+  --cobalt-blue: hsla(234, 85%, 45%, 0.1);
 
+  --light-red-solid: rgb(255, 87, 87);
+  --orangey-yellow-solid: hsl(39, 100%, 56%);
+  --green-teal-solid: hsl(166, 100%, 37%);
+  --cobalt-blue-solid: hsl(234, 85%, 45%);
   /* ## Gradients */
 
   --light-slate-blue: hsl(252, 100%, 67%);
@@ -16,6 +20,7 @@
   --pale-blue: hsl(221, 100%, 96%);
   --light-lavender: hsl(241, 100%, 89%);
   --dark-gray-blue: hsl(224, 30%, 27%);
+  --dark-gray-blue-a: hsla(224, 30%, 27%, 0.604);
 }
 
 body {
@@ -28,12 +33,12 @@ h3 {
   margin: 0;
 }
 .container {
-  min-width: 375px;
+  min-width: 315px;
   max-width: 428px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .section-result {
   background-image: linear-gradient(
@@ -105,13 +110,62 @@ h3 {
   max-width: 250px;
 }
 .section-summary {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .summary-container {
+  display: flex;
+  flex-direction: column;
 }
 .summary-header {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 24px;
 }
 .summary-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.summary-list-item:not(:last-child) {
+  margin-bottom: 15px;
 }
 .summary-list-item {
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.summary-list-item-red {
+  background-color: var(--light-red);
+  color: var(--light-red-solid);
+}
+.item-icon {
+  position: absolute;
+}
+.summary-list-item-yellow {
+  background-color: var(--orangey-yellow);
+  color: var(--orangey-yellow-solid);
+}
+.summary-list-item-green {
+  background-color: var(--green-teal);
+  color: var(--green-teal-solid);
+}
+.summary-list-item-blue {
+  background-color: var(--cobalt-blue);
+  color: var(--cobalt-blue-solid);
+}
+.summary-item-name {
+  margin-left: 30px;
+}
+.summary-your-result {
+  color: var(--dark-gray-blue);
+  font-weight: 700;
+}
+.item-out-of {
+  color: var(--dark-gray-blue-a);
 }
